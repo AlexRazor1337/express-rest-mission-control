@@ -28,7 +28,22 @@ const addNewLaunch = (newLaunch) => {
     ));
 }
 
+const deleteLaunch = (flightNumber) => {
+    const aborted = launches.get(flightNumber);
+    
+    aborted.upcoming = false;
+    aborted.success = true;
+    
+    return aborted;
+}
+
+const existsLaunchWithId = (launchId) => {
+    return launches.has(launchId);
+}
+
 export default {
     getAllLaunches,
-    addNewLaunch
+    addNewLaunch,
+    deleteLaunch,
+    existsLaunchWithId
 }

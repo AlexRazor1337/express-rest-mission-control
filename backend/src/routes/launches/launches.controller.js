@@ -25,7 +25,23 @@ const addNewLaunch = (req, res) => {
     return res.status(201).json(launch);
 }
 
+const deleteLaunch = (req, res) => {
+    const launchId = parseInt(req.params.id);
+    
+    const launch = launches.existsLaunchWithId(launchId);
+    
+    if (!launch) {
+        return res.status(404).json({
+            error: 'Launch not found',
+        });
+    }
+    
+    const launchDeleted = launches.deleteLaunch(launchId);
+    return res.status(200).json(launchDeleted);
+}
+
 export {
     getAllLaunches,
-    addNewLaunch
+    addNewLaunch,
+    deleteLaunch
 };
