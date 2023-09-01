@@ -5,6 +5,7 @@ import morgan from 'morgan';
 import express from 'express';
 
 import planetsRouter from './routes/planets/planets.router.js';
+import launchesRouter from './routes/launches/launches.router.js';
 
 const app = express();
 
@@ -21,5 +22,6 @@ app.get('/', (req, res) => {
 });
 
 app.use(planetsRouter);
+app.use(launchesRouter);
 
 export default app;
