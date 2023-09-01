@@ -1,3 +1,5 @@
+import path from 'path';
+
 import cors from 'cors';
 import express from 'express';
 
@@ -9,6 +11,11 @@ app.use(cors({
     origin: 'http://localhost:3000',
 }));
 app.use(express.json());
+app.use(express.static(path.join(path.resolve(), 'public')));
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(path.resolve(), 'public', 'index.html'));
+});
 
 app.use(planetsRouter);
 

@@ -1,0 +1,17 @@
+{
+  "name": "rest-mission-control",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install:pnpm": "pnpm install --prefix backend && pnpm install --prefix frontend",
+    "install": "npm install --prefix backend && npm install --prefix frontend",
+    "server": "npm --prefix backend run start:dev",
+    "client": "npm --prefix frontend run start",
+    "watch": "npm run server & npm run client",
+    "deploy": "npm run build --prefix frontend && npm run start --prefix backend"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
