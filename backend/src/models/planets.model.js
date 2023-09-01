@@ -34,8 +34,11 @@ const loadPlanetsData = () => {
     });
 }
 
+const getAllPlanets = () => {
+    return planets;
+}
 
-export {
-    planets,
-    loadPlanetsData
+export default {
+    loadPlanetsData,
+    getAllPlanets
 }

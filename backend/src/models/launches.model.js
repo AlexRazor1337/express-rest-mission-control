@@ -13,6 +13,21 @@ const launch = {
 
 launches.set(launch.flightNumber, launch);
 
-export {
-    launches
+const getAllLaunches = () => {
+    return Array.from(launches.values());
+}
+
+const addNewLaunch = (newLaunch) => {
+    const latestFlightNumber = Math.max(...launches.keys()) + 1;
+    launches.set(latestFlightNumber, Object.assign(newLaunch, {
+        flightNumber: latestFlightNumber,
+        upcoming: true,
+        success: true,
+        customer: ['ZTM', 'NASA'],
+        }
+    ));
+}
+
+export default {
+    getAllLaunches
 }
