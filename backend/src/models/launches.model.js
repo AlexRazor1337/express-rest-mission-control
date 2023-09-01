@@ -29,5 +29,6 @@ const addNewLaunch = (newLaunch) => {
 }
 
 export default {
-    getAllLaunches
+    getAllLaunches,
+    addNewLaunch
 }
