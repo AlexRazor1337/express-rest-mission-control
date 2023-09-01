@@ -14,7 +14,7 @@ const loadPlanetsData = () => {
             columns: true,
         })).on('data', (data) => {
             if (isHabbitable(data))
-            planets.push(data); 
+                planets.push(data);
         }).on('end', () => {
             resolve();
         }).on('error', (error) => {
