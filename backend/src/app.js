@@ -24,5 +24,4 @@ app.get('/*', (req, res) => {
     res.sendFile(path.join(path.resolve(), 'public', 'index.html'));
 });
 
-
 export default app;
