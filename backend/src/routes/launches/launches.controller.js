@@ -1,10 +1,10 @@
 import launches from "../../models/launches.model.js"
 
-const getAllLaunches = (req, res) => {
-    return res.status(200).json(launches.getAllLaunches());  
+const getAllLaunches = async (req, res) => {
+    return res.status(200).json(await launches.getAllLaunches());  
 }
 
-const addNewLaunch = (req, res) => {
+const addNewLaunch = async (req, res) => {
     const launch = req.body;
     
     if (!launch.mission || !launch.rocket || !launch.launchDate || !launch.target) {
@@ -21,14 +21,14 @@ const addNewLaunch = (req, res) => {
         });
     } 
     
-    launches.addNewLaunch(launch);
+    await launches.addNewLaunch(launch);
     return res.status(201).json(launch);
 }
 
-const deleteLaunch = (req, res) => {
+const deleteLaunch = async (req, res) => {
     const launchId = parseInt(req.params.id);
     
-    const launch = launches.existsLaunchWithId(launchId);
+    const launch = await launches.existsLaunchWithId(launchId);
     
     if (!launch) {
         return res.status(404).json({
@@ -36,7 +36,7 @@ const deleteLaunch = (req, res) => {
         });
     }
     
-    const launchDeleted = launches.deleteLaunch(launchId);
+    const launchDeleted = await launches.deleteLaunch(launchId);
     return res.status(200).json(launchDeleted);
 }
 
