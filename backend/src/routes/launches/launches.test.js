@@ -1,6 +1,6 @@
 import request from 'supertest';
-import app from '../../app';
-import { mongoConnect, mongoDisconnect } from '../../services/mongo';
+import app from '../../app.js';
+import { mongoConnect, mongoDisconnect } from '../../services/mongo.js';
 
 describe('Launches API', () => {
     beforeAll(async () => {
