@@ -13,7 +13,7 @@ jobs:
       LAUNCHESDATA_API_URL: "https://api.spacexdata.com/v4/launches/query"
     strategy:
       matrix:
-        node-version: [16.x, 18.x]
+        node-version: ["16.x", "18.x"]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
