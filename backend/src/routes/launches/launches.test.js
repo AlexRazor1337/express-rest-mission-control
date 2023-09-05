@@ -16,7 +16,7 @@ describe('Launches API', () => {
 
     describe('Test GET /launches', () => {
         test('It should respond with 200 success', async () => {
-         await request(app).get('v1/launches')
+         await request(app).get('/v1/launches')
              .expect(200)
              .expect('Content-Type', /json/)
         });
@@ -24,7 +24,7 @@ describe('Launches API', () => {
      
      describe('Test POST /launch', () => {
          test('It should respond with 201 created', async () => {
-             const response = await request(app).post('v1/launches')
+             const response = await request(app).post('/v1/launches')
                  .send({
                      mission: 'USS Enterprise',
                      rocket: 'NCC 1701-D',
@@ -43,7 +43,7 @@ describe('Launches API', () => {
          });
          
          test('It should catch missing required properties', async () => {
-             const response = await request(app).post('v1/launches')
+             const response = await request(app).post(/'v1/launches')
                  .send({
                      mission: 'USS Enterprise',
                      rocket: 'NCC 1701-D',
@@ -58,7 +58,7 @@ describe('Launches API', () => {
          });
          
          test('It should catch invalid dates', async () => {
-             const response = await request(app).post('v1/launches')
+             const response = await request(app).post('/v1/launches')
                  .send({
                      mission: 'USS Enterprise',
                      rocket: 'NCC 1701-D',
