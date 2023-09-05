@@ -43,7 +43,7 @@ describe('Launches API', () => {
          });
          
          test('It should catch missing required properties', async () => {
-             const response = await request(app).post(/'v1/launches')
+             const response = await request(app).post('/v1/launches')
                  .send({
                      mission: 'USS Enterprise',
                      rocket: 'NCC 1701-D',
