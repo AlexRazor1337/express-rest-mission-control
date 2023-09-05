@@ -3,14 +3,17 @@ import axios from 'axios';
 import { launches } from "./launches.mongo.js";
 import { planets } from "./planets.mongo.js";
 
-const getAllLaunches = async () => {
+const getAllLaunches = async ({ skip, limit }) => {
     return await launches.find({}, {
         '_id': 0,
         '_v': 0
-    });
+    })
+    .sort({ flightNumber: 1 })
+    .limit(limit)
+    .skip(skip);
 }
 
-const LAUNCHESDATA_API_URL = 'https://api.spacexdata.com/v4/launches/query';
+const LAUNCHESDATA_API_URL = process.env.LAUNCHESDATA_API_URL;
 
 const findLaunch = async (filter) => {
     return await launches.findOne(filter);
@@ -22,8 +25,6 @@ const loadLaunchData = async () => {
         rocket: 'Falcon 1',
         mission: 'FalconSat',
     });
-    
-    console.log(firstLaunch);
     
     if (firstLaunch) {
         console.log('Launch data already loaded!');

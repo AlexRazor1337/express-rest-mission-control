@@ -1,7 +1,9 @@
 import launches from "../../models/launches.model.js"
+import { getPagination } from "../../services/query.js";
 
 const getAllLaunches = async (req, res) => {
-    return res.status(200).json(await launches.getAllLaunches());  
+    const { page, limit } = req.query;
+    return res.status(200).json(await launches.getAllLaunches(getPagination(page, limit)));  
 }
 
 const addNewLaunch = async (req, res) => {
