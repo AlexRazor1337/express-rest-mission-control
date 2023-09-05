@@ -9,6 +9,7 @@ jobs:
     env:
       CI: true
       DATABASE_URL: mongodb://localhost/nasa
+      PORT: 8000
       LAUNCHESDATA_API_URL: "https://api.spacexdata.com/v4/launches/query"
     strategy:
       matrix:
