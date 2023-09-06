@@ -3,7 +3,7 @@ WORKDIR /app
 
 COPY package*.json ./
 
-COPY frontend/package.json ./frontend/
+COPY frontend/package*.json ./frontend/
 RUN npm install ---omit=dev --prefix frontend
 
 COPY backend/package.json ./backend/
