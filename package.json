@@ -9,6 +9,7 @@
     "server": "npm --prefix backend run start:dev",
     "client": "npm --prefix frontend run start",
     "watch": "npm run server & npm run client",
+    "build": "npm run build --prefix frontend",
     "deploy": "npm run build --prefix frontend && npm run start --prefix backend"
   },
   "keywords": [],
