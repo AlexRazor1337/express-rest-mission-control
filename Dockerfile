@@ -15,5 +15,5 @@ RUN npm run build --prefix frontend
 COPY backend/ backend/
 
 USER node
-CMD [ npm, run, start, --prefix, backend ]
+CMD [ "npm", "run", "start", "--prefix", "backend" ]
 EXPOSE 8000
