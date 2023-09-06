@@ -49,7 +49,7 @@ Start in Docker:
 1. Install dependencies: `npm run install`
 2. Run MongoDB locally: `docker-compose up -d`
 3. Configure `backend/.env` file:
-    ```
+    ```env
     DATABASE_URL='mongodb://localhost:27017/missions'
     LAUNCHESDATA_API_URL='https://api.spacexdata.com/v4/launches/query'
     PORT=8000
