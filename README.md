@@ -2,6 +2,8 @@
 
 This repository contains a REST API and a Single Page Application (SPA) for managing space missions. The API fetches planet data from the Kepler dataset and rocket launch history from the SpaceXData API. This project is built using Node.js, Express, MongoDB with Mongoose for the backend, and React for the frontend. It also utilizes PM2 for server management and Jest with Supertest for testing.
 
+All tests are rerun on GitHub Actions after commits to main branch.
+
 ## Installation
 
 To get started with this project, follow these steps:
