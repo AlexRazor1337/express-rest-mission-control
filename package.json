@@ -11,7 +11,7 @@
     "watch": "npm run server & npm run client",
     "build": "npm run build --prefix frontend",
     "deploy": "npm run build && npm run start --prefix backend",
-    "start": "npm run deploy"
+    "start": "npm run start --prefix backend"
   },
   "keywords": [],
   "author": "",
