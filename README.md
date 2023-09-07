@@ -58,6 +58,8 @@ Start in Docker:
 
 This will build the frontend and start the backend server on port 8000, hosting the SPA. You can now access the application in your browser at `http://localhost:8000`.
 
+Currently the app is deployed using [adaptable.io](adaptable.io) and can be accessed at: [mission-control.adaptable.app](https://mission-control.adaptable.app/).
+
 ## API Endpoints
 
 ### Group: Planets
