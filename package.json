@@ -10,6 +10,7 @@
     "client": "npm --prefix frontend run start",
     "watch": "npm run server & npm run client",
     "build": "npm run build --prefix frontend",
+    "build:prod": "npm run install && npm run build --prefix frontend",
     "deploy": "npm run build && npm run start --prefix backend",
     "start": "npm run start --prefix backend"
   },
