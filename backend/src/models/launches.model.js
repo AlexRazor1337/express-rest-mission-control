@@ -70,7 +70,7 @@ const loadLaunchData = async () => {
             rocket: launchDoc['rocket']['name'],
             launchDate: launchDoc['date_local'],
             upcoming: launchDoc['upcoming'],
-            success: launchDoc['success'],
+            success: launchDoc['success'] || true,
             customers,
         };
         
